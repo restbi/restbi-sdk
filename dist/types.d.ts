@@ -104,4 +104,8 @@ export type SQLError = {
     message: string;
     query: string;
 };
+export type ValidationResult = {
+    model: Model;
+    dbTables: Table[];
+};
 //# sourceMappingURL=types.d.ts.map

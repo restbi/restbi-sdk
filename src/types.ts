@@ -112,3 +112,7 @@ export type SQLError = {
     message: string;
     query: string;
 }
+export type ValidationResult ={
+    model: Model,
+    dbTables: Table[]
+}

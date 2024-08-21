@@ -9,7 +9,7 @@ var DatabaseType;
     DatabaseType["SQL_SERVER"] = "SQL_SERVER";
     DatabaseType["SQLITE"] = "SQLITE";
     DatabaseType["SNOWFLAKE"] = "SNOWFLAKE";
-})(DatabaseType || (exports.DatabaseType = DatabaseType = {}));
+})(DatabaseType = exports.DatabaseType || (exports.DatabaseType = {}));
 var ColumnDataType;
 (function (ColumnDataType) {
     ColumnDataType["STRING"] = "STRING";
@@ -17,9 +17,9 @@ var ColumnDataType;
     ColumnDataType["DATE"] = "DATE";
     ColumnDataType["BOOLEAN"] = "BOOLEAN";
     ColumnDataType["JSON"] = "JSON";
-})(ColumnDataType || (exports.ColumnDataType = ColumnDataType = {}));
+})(ColumnDataType = exports.ColumnDataType || (exports.ColumnDataType = {}));
 var ColumnType;
 (function (ColumnType) {
     ColumnType["MEASURE"] = "MEASURE";
     ColumnType["DIMENSION"] = "DIMENSION";
-})(ColumnType || (exports.ColumnType = ColumnType = {}));
+})(ColumnType = exports.ColumnType || (exports.ColumnType = {}));

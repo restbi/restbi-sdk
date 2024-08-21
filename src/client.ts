@@ -1,4 +1,4 @@
-import { Query, Model, SQLResult, SQLError, Table, Connection } from "./types";
+import { Query, Model, SQLResult, SQLError, Table, Connection, ValidationResult } from "./types";
 
 export class RestBIClient {
     private serverURL: string;
@@ -26,7 +26,7 @@ export class RestBIClient {
         });
     }
 
-    public validateModel(model: Model): Promise<Model> {
+    public validateModel(model: Model): Promise<ValidationResult> {
         return fetch(`${this.serverURL}/validate`, {
             method: 'POST',
             headers: {
@@ -35,11 +35,11 @@ export class RestBIClient {
             body: JSON.stringify(model),
         })
         .then(async (response) => {
-            let result = await response.json() as Model | SQLError;
+            let result = await response.json() as ValidationResult | SQLError;
             if ('message' in result) {
                 return Promise.reject(result as SQLError);
             }
-            return result as Model;
+            return result as ValidationResult;
         })
         .catch((error) => {
             return Promise.reject(error); // Re-throw the original SQLError
