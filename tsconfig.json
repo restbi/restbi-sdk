@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "declaration": true, // Ensure this is true to generate .d.ts files
+    "declarationMap": true // Optional, generates a map file for debugging
+  },
+  "include": ["src/**/*"]
+}
