@@ -18,3 +18,4 @@ exports.RestBIClient = void 0;
 var client_1 = require("./client");
 Object.defineProperty(exports, "RestBIClient", { enumerable: true, get: function () { return client_1.RestBIClient; } });
 __exportStar(require("./types"), exports);
+__exportStar(require("./util"), exports);

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ColumnType = exports.ColumnDataType = exports.DatabaseType = void 0;
+exports.SortDirection = exports.ColumnType = exports.ColumnDataType = exports.DatabaseType = void 0;
 var DatabaseType;
 (function (DatabaseType) {
     DatabaseType["POSTGRES"] = "POSTGRES";
@@ -23,3 +23,8 @@ var ColumnType;
     ColumnType["MEASURE"] = "MEASURE";
     ColumnType["DIMENSION"] = "DIMENSION";
 })(ColumnType = exports.ColumnType || (exports.ColumnType = {}));
+var SortDirection;
+(function (SortDirection) {
+    SortDirection["ASC"] = "ASC";
+    SortDirection["DESC"] = "DESC";
+})(SortDirection = exports.SortDirection || (exports.SortDirection = {}));

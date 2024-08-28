@@ -26,6 +26,9 @@ export type Connection = {
     password: string;
     database: string;
     type: DatabaseType;
+    schema?: string;
+    warehouse?: string;
+    role?: string;
 }
 export type Table = {
     id: string;
@@ -87,9 +90,17 @@ export type Filter = {
 export type Query = {
     columns: string[]; // List of column names to select
     filters?: QueryFilter[]; // Optional filters to apply
-    sortBy?: string; // Optional column to sort by
+    sortBy?: SortClause | SortClause[]; // Optional column to sort by
     limit?: number; // Optional limit on the number of rows
-    dateRange?: DateRangeFilter; // Optional predefined date filter (e.g., this week, last month)
+    offset?: number; // Optional offset for pagination
+}
+export enum SortDirection {
+    ASC = 'ASC',
+    DESC = 'DESC',
+}
+export type SortClause = {
+    name: string;
+    direction: SortDirection;
 }
 
 export type QueryFilter = {

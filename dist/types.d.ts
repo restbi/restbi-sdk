@@ -26,6 +26,9 @@ export type Connection = {
     password: string;
     database: string;
     type: DatabaseType;
+    schema?: string;
+    warehouse?: string;
+    role?: string;
 };
 export type Table = {
     id: string;
@@ -82,9 +85,17 @@ export type Filter = {
 export type Query = {
     columns: string[];
     filters?: QueryFilter[];
-    sortBy?: string;
+    sortBy?: SortClause | SortClause[];
     limit?: number;
-    dateRange?: DateRangeFilter;
+    offset?: number;
+};
+export declare enum SortDirection {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+export type SortClause = {
+    name: string;
+    direction: SortDirection;
 };
 export type QueryFilter = {
     column: string;
